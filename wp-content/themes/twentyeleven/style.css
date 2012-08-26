@@ -13,6 +13,7 @@ Text Domain: twentyeleven
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -23,10 +24,10 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: inherit;
+	font-family: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-size: 100%;
 	font-style: inherit;
-	font-weight: inherit;
+	font-weight: normal;
 	margin: 0;
 	outline: 0;
 	padding: 0;
@@ -514,7 +515,7 @@ a:hover {
 #site-title a {
 	color: #111;
 	font-size: 30px;
-	font-weight: bold;
+	font-weight: normal;
 	line-height: 36px;
 	text-decoration: none;
 }
@@ -895,7 +896,7 @@ p img,
 .wp-caption .wp-caption-text,
 .gallery-caption {
 	color: #666;
-	font-family: Georgia, serif;
+	font-family: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-size: 12px;
 }
 .wp-caption .wp-caption-text {
@@ -1089,7 +1090,7 @@ article.format-status .entry-content {
 	position: relative;
 }
 .singular.page .hentry {
-	padding: 3.5em 0 0;
+	padding: 0 0 0;
 }
 .singular .entry-title {
 	color: #000;
@@ -1774,7 +1775,7 @@ section.recent-posts .other-recent-posts li:after {
 	font-size: 13px;
 }
 .widget a {
-	font-weight: bold;
+	font-weight: normal;
 	text-decoration: none;
 }
 .widget a:hover,
