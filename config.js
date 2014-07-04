@@ -49,7 +49,7 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://blog.siddhuw.info',
-
+		fileStorage: false,
         mail: {
               transport: 'SMTP',
               options: {
@@ -64,7 +64,10 @@ config = {
         database: {
             client: 'postgres',
             connection: process.env.DATABASE_URL,
-            debug: false
+			user: process.env.POSTGRES_USER,
+          	password: process.env.POSTGRES_PWD,
+          	database: process.env.POSTGRES_DB,
+          	port: '5432'
         },
         server: {
             host: '0.0.0.0',
