@@ -259,8 +259,8 @@ coreHelpers.content = function (options) {
     truncateOptions = _.pick(truncateOptions, ['words', 'characters', 'preview']);
     _.keys(truncateOptions).map(function (key) {
         truncateOptions[key] = parseInt(truncateOptions[key], 10);
-    }); 
-
+    });
+ 
     if (truncateOptions.hasOwnProperty('words') || truncateOptions.hasOwnProperty('characters')) {
         // Due to weirdness in downsize the 'words' option
         // must be passed as a string. refer to #1796
@@ -271,13 +271,15 @@ coreHelpers.content = function (options) {
         return new hbs.handlebars.SafeString(
             downsize(this.html, truncateOptions)
         );
-    } 
-    else if (truncateOptions.hasOwnProperty('preview')) {
+    } else if (truncateOptions.hasOwnProperty('preview')) {
         var split = this.html.split('<!--preview-->', 2)
         var output = split[0]
+        if (split[1]) {
+            output += '<div class="continue">● ● ●</div>'
+        }
         return new hbs.handlebars.SafeString(output)
     }
-
+ 
     return new hbs.handlebars.SafeString(this.html);
 };
 
