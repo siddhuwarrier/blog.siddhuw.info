@@ -297,7 +297,8 @@ coreHelpers.excerpt = function (options) {
     var truncateOptions = (options || {}).hash || {},
         excerpt;
 
-    truncateOptions = _.pick(truncateOptions, ['words', 'characters']);
+    console.log(this.html);
+    truncateOptions = _.pick(truncateOptions, ['words', 'characters', 'preview']);
     _.keys(truncateOptions).map(function (key) {
         truncateOptions[key] = parseInt(truncateOptions[key], 10);
     });
@@ -309,6 +310,10 @@ coreHelpers.excerpt = function (options) {
 
     if (!truncateOptions.words && !truncateOptions.characters) {
         truncateOptions.words = 50;
+    } else if (truncateOptions.hasOwnProperty('preview')) {
+        var split = this.html.split('<!--preview-->', 2)
+        var output = split[0]
+        return new hbs.handlebars.SafeString(output)
     }
 
     return new hbs.handlebars.SafeString(
