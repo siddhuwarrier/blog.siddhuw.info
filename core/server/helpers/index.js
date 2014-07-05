@@ -256,10 +256,10 @@ coreHelpers.tags = function (options) {
 //
 coreHelpers.content = function (options) {
     var truncateOptions = (options || {}).hash || {};
-    truncateOptions = _.pick(truncateOptions, ['words', 'characters']);
+    truncateOptions = _.pick(truncateOptions, ['words', 'characters', 'preview']);
     _.keys(truncateOptions).map(function (key) {
         truncateOptions[key] = parseInt(truncateOptions[key], 10);
-    });
+    }); 
 
     if (truncateOptions.hasOwnProperty('words') || truncateOptions.hasOwnProperty('characters')) {
         // Due to weirdness in downsize the 'words' option
