@@ -246,7 +246,7 @@ coreHelpers.tags = function (options) {
 // `{{content}}`
 // `{{content words="20"}}`
 // `{{content characters="256"}}`
-//
+// `{{content preview}}`
 // Turns content html into a safestring so that the user doesn't have to
 // escape it or tell handlebars to leave it alone with a triple-brace.
 //
